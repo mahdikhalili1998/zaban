@@ -1,8 +1,6 @@
-import './globals.css';
+import "./globals.css";
 import { Inter } from "next/font/google";
 import Layout from "@/layout/Layout";
-
-
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
-      <body><Layout>{children}</Layout></body>
+      <body>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }

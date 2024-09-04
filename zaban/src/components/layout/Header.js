@@ -1,30 +1,54 @@
+import Image from "next/image";
 import Link from "next/link";
-function Header(){
-    return( 
-    <header>
-        <div class="container mx-auto flex justify-between items-center px-5">
-            <ul class="flex space-x-4">
-                <li class="w-10 h-6">  خدمات  </li>
-                <li>   </li>
-                <li class="w-10 h-6">  کلاسها  </li>
-                <li class="w-10 h-6">  فروشگاه  </li>
-                <li>   </li>
-                <li class="w-10 h-6">  اساتید  </li>
-               <li class="w-10 h-6">
-                <Link href="/">میتیلو</Link>
-               </li>
-            </ul>
-        </div>
+import { FiSearch } from "react-icons/fi";
+import { MdOutlinePersonAddAlt } from "react-icons/md";
+function Header() {
+  return (
+    <header className="flex m-4 items-center justify-between">
+      <div class=" flex justify-between items-center ">
+        <ul class="flex gap-5 items-center  ">
+          <li>
+            <Image
+              src={"/mainLogo.png"}
+              width={300}
+              height={300}
+              alt="logo"
+              priority
+              className="w-16 mt-[7px]"
+            />
+          </li>
+          <li> خدمات </li>
+          <li> </li>
+          <li> کلاسها </li>
+          <li> فروشگاه </li>
+          <li> </li>
+          <li> اساتید </li>
+          <li>
+            <Link href="/">میتیلو</Link>
+          </li>
+        </ul>
+      </div>
+      <div className=" bg-gray-200 flex  items-center gap-3 rounded-md px-3 py-1">
+        <span>
+          <FiSearch className="text-purple-600" />
+        </span>
+        <input
+          className=" bg-gray-200"
+          type="text"
+          placeholder="جست وجو کنید..."
+        />
+      </div>
 
-        <div class="text-left">
-            <input class="h-10 w-60 justify-center rounded-3xl p-3 px-11" type="text" placeholder="جست وجو کنید..."></input>
-            <span class="w-5 h-5">📞</span>
-            <span class="w-5 h-5"> 🛒 </span>
-            <span class="w-5 h-5"> ورود | </span>
-            <span class="w-5 h-5"> ثبت نام</span>
-            
-        </div>
+      <ul className="flex items-center gap-5 ">
+        <li className="w-max">📞</li>
+        <li className="w-max"> 🛒 </li>
+        <li className="w-max">   | ورود </li>
+        <li className="w-max flex items-center gap-2">
+          <MdOutlinePersonAddAlt className="text-xl" />
+          <span> ثبت نام</span>
+        </li>
+      </ul>
     </header>
-    )
-} 
+  );
+}
 export default Header;
